@@ -1,0 +1,307 @@
+*{
+    margin: 0;
+}
+
+:root {
+    --marine: hsl(213, 96%, 18%);
+    --purplish: hsl(243, 100%, 62%);
+    --pastel: hsl(228, 100%, 84%);
+    --light: hsl(206, 94%, 87%);
+    --red: hsl(354, 84%, 57%);
+    --coolGrey: hsl(231, 11%, 63%);
+    --lightGrey: hsl(229, 24%, 87%);
+    --magnolia: hsl(217, 100%, 97%);
+    --alabaster: hsl(231, 100%, 99%);
+    --white: hsl(0, 0%, 100%);
+    background-color: var(--lightGrey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ubuntu';
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('/assets/fonts/Ubuntu-Regular.ttf');
+}
+
+#allContent {
+    position: relative;
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 5rem 1rem;
+    display: flex;
+    gap: 10px;
+}
+
+aside {
+    background: url('./assets/images/bg-sidebar-desktop.svg') no-repeat center center;
+    background-size: cover;
+    background-color: var(--purplish);
+    border-radius: 12px;
+    height: 30rem;
+}
+
+.step-box {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    padding: 0.8rem;
+    gap: 10px;
+    height: 50px;
+    letter-spacing: 2px;
+}
+
+.step-num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 900;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.step-box span {
+    font-size: 0.7rem;
+    font-weight: 100;
+    color: var(--coolGrey);
+}
+
+.step-box h1 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--white);
+    text-wrap: nowrap;
+}
+
+.now-step {
+    background-color: var(--pastel);
+    color: var(--marine);
+    border: 1px solid none !important;
+}
+
+#data {
+    padding: 1rem 2rem;
+}
+#mainData{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.intro h1 {
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: var(--marine);
+    margin-bottom: 0.8rem;
+}
+
+.intro p {
+    color: var(--coolGrey);
+    font-size: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 0;
+}
+
+label {
+    color: var(--marine);
+}
+
+input {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 1px solid var(--coolGrey);
+    margin: 0.6rem 0;
+    color: var(--marine);
+    font-weight: 600;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.next-step {
+    position: absolute;
+    height: fit-content;
+    cursor: pointer;
+    background-color: var(--marine);
+    padding: 0.5rem 0.8rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    right: 2rem;
+    bottom: 1rem;
+    color: white;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+}
+.plan-data{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    padding: 2rem 0;
+    gap: 15px;
+}
+.plan-box{
+    height: 10rem;
+    width: 7rem;
+    padding: 1rem;
+    border: 1px solid var(--lightGrey);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.img-box{
+    margin-bottom:2.7rem ;
+}
+.plan-box h2{
+    color: var(--marine);
+    margin-bottom: 0.4rem ;
+}
+.price{
+    color: var(--coolGrey);
+    font-size: 14px;
+}
+.free{
+    color: var(--marine);
+    font-size: 17px;
+    margin-top: 0.3rem;
+}
+.plan-box:hover{
+    transition: all 250ms ease-in-out;
+    border: 1px solid var(--marine);
+}
+.button{
+    display: block;
+    background-color: var(--pastel);
+    border-radius: 15px;
+    width: 50px;
+    height: 22px;
+    margin: 0 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+.button::before{
+    position: absolute;
+    content: '';
+    background-color: #ffffff;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    margin: 2px;
+    transition: 0.2s;
+}
+input[type='checkbox']:checked + .button{
+    background-color: var(--marine);
+}
+input[type='checkbox']:checked + .button::before{
+    transform: translateX(28px);
+}
+input[type='checkbox']{
+    display: none;
+}
+.month-year{
+    display: flex;
+    justify-content: center;
+    background-color: var(--alabaster);
+    padding: 1rem;
+    width: 100%;
+}
+
+.month-year p{
+    color: var(--marine);
+    font-weight: 600;
+}
+.btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin-bottom: 1rem;
+}
+.btns button:nth-child(1){
+    background-color: transparent;
+    border: none;
+    color: var(--coolGrey);
+    font-weight: 600;
+    font-size: 1rem;
+        cursor: pointer;
+}
+.btns button:nth-child(2){
+    height: fit-content;
+    cursor: pointer;
+    background-color: var(--marine);
+    padding: 0.5rem 0.8rem;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    #allContent{
+        flex-direction: column;
+        align-items: center;
+        padding: 0rem;
+        margin: 0;
+    }
+    aside{
+        background: url('./assets/images/bg-sidebar-mobile.svg') no-repeat center center;
+        background-size: cover;
+        display: flex;
+        height: auto;
+        justify-content: center;
+        width: 100%;
+        border-radius: 0;
+    }
+    .step-box{
+    justify-content: center;
+    padding: 0;
+    margin: 0.5rem 0.5rem 3rem 0.5rem;
+    }
+    .step-box div{
+    display: none;
+    }
+    #data{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: white;
+        position: relative;
+        bottom: 3rem;
+        border-radius: 12px;
+        width: 75%;
+    }
+    .plan-data{
+        grid-template-columns: 1fr;
+    }
+    .plan-box{
+        display: flex;
+        width: 100%;
+        height: auto;
+        gap: 1rem;
+        align-items: center;
+    }
+    .img-box{
+        margin: 0;
+    }
+    /* .next-step{
+        bottom: 0;
+    } */
+}
