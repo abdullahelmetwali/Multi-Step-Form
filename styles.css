@@ -3,15 +3,15 @@
 }
 
 :root {
-    --marine: hsl(213, 96%, 18%);
+    --marine: #02295a;
     --purplish: hsl(243, 100%, 62%);
     --pastel: hsl(228, 100%, 84%);
-    --light: hsl(206, 94%, 87%);
+    --light: #bfe2fd;
     --red: hsl(354, 84%, 57%);
     --coolGrey: hsl(231, 11%, 63%);
-    --lightGrey: hsl(229, 24%, 87%);
+    --lightGrey: #d6d9e6;
     --magnolia: hsl(217, 100%, 97%);
-    --alabaster: hsl(231, 100%, 99%);
+    --alabaster: #fafbff;
     --white: hsl(0, 0%, 100%);
     background-color: var(--lightGrey);
     display: flex;
@@ -25,7 +25,7 @@ a{
 }
 @font-face {
     font-family: 'Ubuntu';
-    src: url('/assets/fonts/Ubuntu-Regular.ttf');
+    src: url('./assets/fonts/Ubuntu-Regular.ttf');
 }
 
 #allContent {
@@ -87,9 +87,12 @@ aside {
     color: var(--marine);
     border: 1px solid none !important;
 }
-
+.selectedBox{
+    background-color: var(--alabaster);
+    border: 1px solid var(--marine) !important;
+}
 #data {
-    padding: 1rem 2rem;
+    padding: 1rem 3rem;
 }
 #mainData{
     display: flex; 
@@ -206,13 +209,13 @@ input[type=number]::-webkit-inner-spin-button {
     margin: 2px;
     transition: 0.2s;
 }
-input[type='checkbox']:checked + .button{
+#check:checked + .button{
     background-color: var(--marine);
 }
-input[type='checkbox']:checked + .button::before{
+#check:checked + .button::before{
     transform: translateX(28px);
 }
-input[type='checkbox']{
+#check{
     display: none;
 }
 .month-year{
@@ -231,8 +234,8 @@ input[type='checkbox']{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
-    margin-bottom: 1rem;
+    width: 100%;
+    margin-top: 2rem;
 }
 .btns button:nth-child(1){
     background-color: transparent;
@@ -253,7 +256,99 @@ input[type='checkbox']{
     letter-spacing: 0.8px;
     font-weight: 600;
 }
+.error{
+    color: red;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+}
+.add-boxs{
+    display: grid;
+    gap: 15px;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+input[name='checkAdd']{
+    width: 18px;
+    height: 18px;
+    background-color: #02295a;
+}
+.add-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--lightGrey);
+    padding: 1rem 1.1rem;
+    border-radius: 12px;
+    width: 100%;
+    cursor: pointer;
+}
+.add-box h2{
+    color: var(--marine);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+.add-box p{
+    color: var(--coolGrey);
+    font-size: 0.9rem;
+}
+.add-box span{
+    color: var(--purplish);
+    font-weight: 600;
+}
+.flexed{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    margin: 0.7rem 0;
+}
+.flexed p{
+    color: var(--coolGrey);
+    font-size: 0.9rem ;
+}
+.flexed span{
+    color: var(--marine);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
 
+.total h2{
+    font-size: 14px;
+    color: var(--coolGrey);
+}
+.total div{
+    color: var(--purplish);
+    font-size: 18px;
+    font-weight: 900;
+}
+.confirm-data{
+    background-color: var(--magnolia);
+    padding: 1rem;
+    border-radius: 12px;
+}
+.confirm-plan h2{
+    color: var(--marine);
+    font-size: 1.1rem;
+        margin-bottom: 0.2rem;
+}
+.confirm-data a{
+    color: var(--coolGrey);
+    font-size: 0.9rem;
+}
+.thnks{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    padding: 2rem;
+    gap: 1rem;
+}
+.thnks h2{
+    color: var(--marine);
+    font-size: 2rem;
+}
+.thnks p{
+    text-align: center;
+    color: var(--coolGrey);
+}
 @media (max-width: 768px) {
     #allContent{
         flex-direction: column;
@@ -287,9 +382,11 @@ input[type='checkbox']{
         bottom: 3rem;
         border-radius: 12px;
         width: 75%;
+        padding: 1rem 2rem;
     }
     .plan-data{
         grid-template-columns: 1fr;
+        justify-items:center;
     }
     .plan-box{
         display: flex;
@@ -301,7 +398,13 @@ input[type='checkbox']{
     .img-box{
         margin: 0;
     }
-    /* .next-step{
-        bottom: 0;
-    } */
+    .btns{
+        width: 100%;
+    }
+    .month-year{
+        width: 82%;
+    }
+    .add-boxs{
+        justify-items: center;
+    }
 }
